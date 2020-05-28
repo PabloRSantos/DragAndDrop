@@ -13,10 +13,13 @@ body {
 
 #cards {
     display: flex;
+    margin: 20px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .addCard {
-    margin: 20px 15px;
+    margin: 0 10px;
     background-color: #284B63;
     border-radius: 5px;
     height: 50px;
@@ -34,22 +37,32 @@ margin: 0 15px;
     letter-spacing: 0.5px;
 }
 
-.addCard p {
+.addCard p, .card .top p {
     font-size: 30px;
+    cursor: pointer;
 }
 
 .card {
-    margin: 20px 15px;
+    margin: 0px 10px 10px 10px;
     background-color: #284B63;
     border-radius: 5px;
     width: 250px;
     max-width: 250px;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.card .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .card h3 {
-    margin: 10px 15px;
+    margin: 10px 0;
     font-size: 23px;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -86,9 +99,20 @@ margin: 0 15px;
 
 
 .status {
-    background-color: #EF2D56;
     border-radius: 5px;
     max-width: 20px;
     min-height: 5px;
     margin-bottom: 5px;
+}
+
+.status.red{
+    background-color: #EF2D56;
+}
+
+.status.green{
+    background-color: green;
+}
+
+.status.yellow{
+    background-color: yellow;
 }
