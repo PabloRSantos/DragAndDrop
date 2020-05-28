@@ -3,6 +3,7 @@ body {
     padding: 0;
     background-color: #0A1128;
     font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: white;
 }
 
 * {
@@ -14,22 +15,52 @@ body {
     display: flex;
 }
 
-.card {
+.addCard {
     margin: 20px 15px;
     background-color: #284B63;
-    padding: 10px 20px;
-    color: white;
     border-radius: 5px;
+    height: 50px;
     width: 250px;
     max-width: 250px;
-    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card h3 {
-    margin: 10px 0;
+.addCard h3, .addCard p {
+margin: 0 15px;
     font-size: 23px;
     font-weight: 700;
     letter-spacing: 0.5px;
+}
+
+.addCard p {
+    font-size: 30px;
+}
+
+.card {
+    margin: 20px 15px;
+    background-color: #284B63;
+    border-radius: 5px;
+    width: 250px;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    margin: 10px 15px;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.areaDrop{
+    padding: 10px 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-height: 200px;
+    min-width: 100%;
 }
 
 .cardObject {
@@ -39,7 +70,20 @@ body {
     font-size: 19px;
     font-weight: 500;
     letter-spacing: 0.5px;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.568);
 }
+
+.cardObject + .cardObject {
+    margin-top: 10px;
+}
+
+.isDragging {
+    cursor: move;
+    opacity: 0.5;
+}
+
 
 .status {
     background-color: #EF2D56;
