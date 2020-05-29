@@ -13,7 +13,7 @@ addCard.forEach(addCard => addCard.addEventListener("click", addCardFunction))
 function addCardFunction(){
     let cardObject = document.createElement("div")
     let status = document.createElement("div")
-    let p = document.createElement("p")
+    let input = document.createElement("input")
 
     cardObject.classList.add("cardObject")
     cardObject.setAttribute("draggable", "true")
@@ -21,10 +21,12 @@ function addCardFunction(){
     status.classList.add("status")
     status.classList.add("red")
 
-    p.innerText = "Tarefa"
+    input.setAttribute("placeholder", "Tarefa")
+    input.setAttribute("type", "text")
+    input.classList.add("tarefaCard")
 
     cardObject.appendChild(status)
-    cardObject.appendChild(p)
+    cardObject.appendChild(input)
     atribuirEventoCard(cardObject)
 
     this.classList.add("add")
@@ -43,12 +45,12 @@ function addCardFunction(){
 newCard.addEventListener("click", () => {
     let new_card = document.createElement("div")
     let top = document.createElement("div")
-    let h3 = document.createElement("h3")
+    let inputTop = document.createElement("input")
     let pTop = document.createElement("p")
     let areaDrop = document.createElement("div")
     let cardObject = document.createElement("div")
     let status = document.createElement("div")
-    let pCard = document.createElement("p")
+    let inputCard = document.createElement("input")
     let cards = document.querySelector("#cards")
 
     new_card.classList.add("card")
@@ -58,18 +60,22 @@ newCard.addEventListener("click", () => {
     status.classList.add("status")
     status.classList.add("red")
     
-    h3.innerText = "Novo card"
     pTop.innerText = "+"
-    pCard.innerText = "Tarefa"
     cardObject.setAttribute("draggable", "true")
+    inputCard.setAttribute("placeholder", "Tarefa")
+    inputCard.setAttribute("type", "text")
+    inputCard.classList.add("tarefaCard")
+    inputTop.setAttribute("placeholder", "Titulo")
+    inputTop.setAttribute("type", "text")
+    inputTop.classList.add("tituloCard")
 
     pTop.addEventListener("click", addCardFunction)
 
-    top.appendChild(h3)
+    top.appendChild(inputTop)
     top.appendChild(pTop)
 
     cardObject.appendChild(status)
-    cardObject.appendChild(pCard)
+    cardObject.appendChild(inputCard)
 
     areaDrop.appendChild(cardObject)
 

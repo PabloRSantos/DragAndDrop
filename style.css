@@ -70,11 +70,24 @@ margin: 0 15px;
     margin: 0 auto;
 }
 
-.card h3 {
-    margin: 10px 0;
+.card .tituloCard {
+    margin: 10px 15px 10px 0;
     font-size: 23px;
     font-weight: 700;
     letter-spacing: 0.5px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    max-width: 90%;
+}
+
+.card .tarefaCard {
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 20px;
 }
 
 .areaDrop{
