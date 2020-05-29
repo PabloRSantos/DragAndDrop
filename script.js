@@ -19,6 +19,7 @@ function addCardFunction(){
 
     cardObject.appendChild(status)
     cardObject.appendChild(p)
+    atribuirEventoCard(cardObject)
 
     this.classList.add("add")
 
