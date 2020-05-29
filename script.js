@@ -6,10 +6,15 @@ const newCard = document.querySelector("#cards .addCard p")
 
 lixo.addEventListener("dragenter", lixoOver)
 lixo.addEventListener("dragleave", lixoLeave)
+
 dropZone.forEach(dropZone => atribuirEventoDrop(dropZone))
+
 card.forEach(card => atribuirEventoCard(card))
 
 addCard.forEach(addCard => addCard.addEventListener("click", addCardFunction))
+
+newCard.addEventListener("click", addNewCard) 
+
 function addCardFunction(){
     let cardObject = document.createElement("div")
     let status = document.createElement("div")
@@ -42,7 +47,7 @@ function addCardFunction(){
     this.classList.remove("add")
 }
 
-newCard.addEventListener("click", () => {
+function addNewCard (){
     let new_card = document.createElement("div")
     let top = document.createElement("div")
     let inputTop = document.createElement("input")
@@ -87,7 +92,7 @@ newCard.addEventListener("click", () => {
 
     atribuirEventoCard(cardObject)
     atribuirEventoDrop(areaDrop)
-})
+}
 
 function lixoOver(){
     lixo.classList.add("erasing")
@@ -118,7 +123,6 @@ function dragStart(){
     dropZone2.forEach(dropZone => dropZone.style.backgroundColor = "rgba(255, 0, 0, 0.712)")
 }
 
-
 function dragEnd(){
     let areaDrop = document.querySelectorAll(".areaDrop")
     if(lixo.classList.contains("erasing")){
@@ -139,10 +143,12 @@ function dragEnd(){
 function dragEnter(){
     this.style.backgroundColor = "#4cd137bd"
 }
+
 function dragOver(){
     const isDragging = document.querySelector(".isDragging")
     this.appendChild(isDragging)
 }
+
 function dragLeave(){
     this.style.backgroundColor = "rgba(255, 0, 0, 0.712)"
 }
