@@ -16,6 +16,7 @@ body {
     margin: 20px 20px;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .addCard {
@@ -43,14 +44,11 @@ margin: 0 15px;
 }
 
 .card {
-    margin: 0px 10px 10px 10px;
     background-color: #284B63;
     border-radius: 5px;
     width: 250px;
     max-width: 250px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    margin: 0px 10px 10px 10px;
 }
 
 .card .top {
