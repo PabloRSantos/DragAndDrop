@@ -103,7 +103,6 @@ function lixoLeave(){
 
 function atribuirEventoCard(card){
     card.addEventListener("dragstart", dragStart)
-    card.addEventListener("drag", drag)
     card.addEventListener("dragend", dragEnd)
 }
 
@@ -119,9 +118,6 @@ function dragStart(){
     dropZone2.forEach(dropZone => dropZone.style.backgroundColor = "rgba(255, 0, 0, 0.712)")
 }
 
-function drag (){
-
-}
 
 function dragEnd(){
     let areaDrop = document.querySelectorAll(".areaDrop")
