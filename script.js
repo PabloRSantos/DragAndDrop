@@ -1,5 +1,48 @@
 var card = document.querySelectorAll("#cards .cardObject")
-var dropZone = document.querySelectorAll("#cards .areaDrop") 
+var dropZone = document.querySelectorAll("#cards .areaDrop")
+const lixo = document.querySelector("#lixo")
+const addCard = document.querySelectorAll(".card .top p")
+
+addCard.forEach(addCard => addCard.addEventListener("click", addCardFunction))
+function addCardFunction(){
+    let cardObject = document.createElement("div")
+    let status = document.createElement("div")
+    let p = document.createElement("p")
+
+    cardObject.classList.add("cardObject")
+    cardObject.setAttribute("draggable", "true")
+
+    status.classList.add("status")
+    status.classList.add("red")
+
+    p.innerText = "Tarefa"
+
+    cardObject.appendChild(status)
+    cardObject.appendChild(p)
+
+    this.classList.add("add")
+
+    let card = document.querySelectorAll(".card")
+    card.forEach(card => {
+        if(card.querySelector(".add") !== null){
+            let areaDrop = card.querySelector(".areaDrop")
+            areaDrop.appendChild(cardObject)
+        }
+    })
+   
+    this.classList.remove("add")
+}
+
+lixo.addEventListener("dragover", apagar)
+function apagar(){
+    const areaDrop = document.querySelectorAll(".areaDrop")
+    areaDrop.forEach(areaDrop => {
+    const isDragging = areaDrop.querySelector(".isDragging")
+        if (isDragging !== null) {
+            areaDrop.removeChild(isDragging)
+        }
+        })
+}
 
 dropZone.forEach(dropZone => atribuirEventoDrop(dropZone))
 card.forEach(card => atribuirEventoCard(card))
